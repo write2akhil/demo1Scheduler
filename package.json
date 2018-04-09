@@ -1,0 +1,19 @@
+{
+  "name": "philipsapischeduler",
+  "version": "1.0.0",
+  "description": "node api for scheduler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.3.0",
+    "eslint": "3.8.1",
+    "eslint-plugin-import": "2.0.1",
+    "eslint-watch": "2.1.14",
+    "express": "^4.16.3",
+    "node-schedule": "^1.3.0"
+  }
+}
