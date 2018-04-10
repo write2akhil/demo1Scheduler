@@ -6,6 +6,7 @@ var NodeAE = require('./sdk/iot-application-services-sdk-nodejs-master');
 var nodeAE = new NodeAE();
 nodeAE.setBaseURI('appiot-mds');
 var app = express();
+//const cron = require('cron');
 app.listen(process.env.PORT || 8050, function () {
     console.log('philipslightning app is listening on port 8050!');
   });
@@ -21,12 +22,13 @@ var toDateRange = new Date(fromDateRange);
 toDateRange.setMinutes(fromDateRange.getMinutes()+58,59,1000);
 console.log(" From Date:  "+ fromDateRange.toISOString()+ "To Date: "+ toDateRange.toISOString());
 
-var cronJobForDemo1CalculatedValues = cron.schedule("0 */10 * * * *", function () {
+var cronJobForDemo1CalculatedValues = cron.schedule("0 5 * * * *", function () {
+ //   var cronJobForDemo1CalculatedValues = cron.job("* 40 * * * *", function () {    
     thingIdsDemo1.forEach(function(thingId){
         console.log("Runnig for deviceId: "+thingId + " From Date:  "+ fromDateRange.toISOString()+ "To Date: "+ toDateRange.toISOString());
-        GetMeasuredData(thingId, fromDateRange,toDateRange);
+     //   GetMeasuredData(thingId, fromDateRange,toDateRange);
     });
-}, false);
+},false);
 
 cronJobForDemo1CalculatedValues.start();
 
