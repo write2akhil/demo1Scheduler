@@ -5,4 +5,4 @@ applications:
   instances: 1
   timeout: 180
   buildpack: nodejs_buildpack
-  command: node index.js
+  command: node demo1Scheduler.js
